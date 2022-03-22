@@ -1,0 +1,81 @@
+.viewphoto_page {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewphoto_page .row {
+    width: 80%;
+}
+
+.viewphoto_page .card {
+    max-height: 80vh;
+}
+
+.viewphoto_page .card img {
+    width: 100%;
+    max-height: 100%;
+    object-position: center;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.image-card .card-header i {
+    font-size: 20px;
+}
+
+.image-card .card-body {
+    text-align: center;
+}
+
+.description-card .card-header .card-title {
+    color: #9e9b9b;
+    text-align: center;
+}
+
+.description-card .card-body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: justify;
+}
+
+.description-card .card-body::-webkit-scrollbar {
+    display: none;
+}
+
+.description-card .card-body .card-text {
+    font-size: 14px;
+    color: #9e9b9b;
+}
+
+@media only screen and (max-width:1300px) {
+    .viewphoto_page .row {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .viewphoto_page .row {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .viewphoto_page .row {
+        width: 60%;
+    }
+
+    .viewphoto_page .card {
+        max-height: 42vh;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .viewphoto_page .row {
+        width: 90%;
+    }
+}

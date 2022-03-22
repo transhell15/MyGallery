@@ -1,0 +1,12 @@
+.form-container-fluid {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-container-fluid .row {
+    width: 100%;
+}

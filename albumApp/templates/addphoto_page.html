@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/addphoto_page.css' %}">
+{% endblock css %}
+
+{% block body %}
+
+<div class="container-fluid form-container-fluid">
+    <div class="row">
+        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-8 mx-auto">
+            <a href="{% url 'landing_page' %}" class="btn btn-link text-secondary active">
+                <i class="fas fa-long-arrow-alt-left"></i>
+            </a>
+            <form class="card p-4 mt-3" method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" class="form-control form-control-sm mb-3" id="images" name="images" required
+                    multiple />
+                <div class="form-outline mb-3">
+                    <input type="text" class="form-control form-control-sm" id="description" name="description"
+                        required />
+                    <label class="form-label" for="description">Something About Image</label>
+                </div>
+                <select name="category" class="select form-control form-control-sm mb-3">
+                    <option value="none">Image Category</option>
+                    {% for category in categories %}
+                    <option value="{{category.id}}">{{category.name}}</option>
+                    {% endfor %}
+                </select>
+                <div class="form-outline mb-3">
+                    <input type="text" class="form-control form-control-sm" id="new_category" name="new_category" />
+                    <label class="form-label" for="new_category">Create Image Category</label>
+                </div>
+                <button type="submit" class="btn btn-link btn-block text-dark active">Add your memory</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

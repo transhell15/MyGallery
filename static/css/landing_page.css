@@ -1,0 +1,86 @@
+.row,
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.landing-page {
+    width: 95vw;
+    margin: auto;
+    height: 95vh;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5vh;
+}
+
+.category-container,
+.gallery-container {
+    max-height: 85vh;
+}
+
+
+.gallery-container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.category-container::-webkit-scrollbar {
+    display: none;
+
+}
+
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card-header {
+    border: none;
+}
+
+.card-footer {
+    border: none;
+}
+
+.category-container .card-header a {
+    text-transform: capitalize;
+}
+
+.category-container .card-body {
+    max-height: 85%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.category-container .card-body::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-container .card {
+    height: 41vh;
+}
+
+.gallery-container .card .bg-image {
+    height: 100%;
+}
+
+.gallery-container .card .bg-image .img-fluid {
+    min-height: 100%;
+    object-position: center;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+@media only screen and (max-width:576px) {
+
+    .category-container,
+    .gallery-container {
+        max-height: 43vh;
+    }
+
+    .gallery-container .card {
+        height: 45vh;
+    }
+}

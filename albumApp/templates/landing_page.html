@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+
+{% endblock css %}
+
+{% block body %}
+
+<div class="row landing-page">
+    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-5 col-sm-5">
+        <div class="card container-fluid category-container">
+            <div class="card-header mt-3">
+                <a href="{% url 'landing_page' %}" class="btn btn-secondary btn-block btn-rounded">MyGallery</a>
+            </div>
+            <div class="card-body p-2 m-2">
+                {% for category in categories %}
+                <a href="{% url 'landing_page' %}?category={{category.name}}"
+                    class="btn btn-link btn-block text-secondary">{{category.name}}</a>
+                {% endfor %}
+            </div>
+            <div class="card-footer mb-3">
+                <a href="{% url 'addphoto_page' %}" class="btn btn-link btn-block text-dark active">Add Photo</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-7 col-sm-7">
+        <div class="row container-fluid gallery-container">
+            {% for photo in photos %}
+            <div class="col-xxl-4 col-xl-4 col-lg-6">
+                <div class="card mb-4">
+                    <div class="bg-image hover-overlay ripple p-3" data-mdb-ripple-color="light">
+                        <img src="{{photo.image.url}}" class="img-fluid">
+                        <a href="{% url 'viewphoto_page' photo.id %}">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'viewphoto_page' photo.id %}"
+                            class="btn btn-link btn-block text-dark active">View</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
